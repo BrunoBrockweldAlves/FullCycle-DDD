@@ -53,6 +53,4 @@ describe("Customer unit tests", () => {
     // Assert
     expect(customer.isActive).toBeTruthy();
   });
-
-  //teste
 });
