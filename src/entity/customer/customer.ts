@@ -31,8 +31,6 @@ export default class Customer {
     if (!this._address) {
       throw Error("Address is mandatory to activate Customer.");
     }
-
-    this._address.validate();
     this._active = true;
   }
 

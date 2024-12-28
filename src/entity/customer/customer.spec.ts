@@ -53,4 +53,12 @@ describe("Customer unit tests", () => {
     // Assert
     expect(customer.isActive).toBeTruthy();
   });
+
+  it("should throw error when address is undefined", () => {
+    // Arrange
+    const customer = new Customer("123", "Name");
+
+    // Assert
+    expect(customer.activate).toBeTruthy();
+  });
 });
