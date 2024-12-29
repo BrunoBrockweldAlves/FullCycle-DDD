@@ -19,8 +19,19 @@ describe("Product unit tests", () => {
     let newProductName = "NewProductName";
 
     // Act
-    product.name = newProductName;
+    product.changeName(newProductName);
     // Assert
     expect(product.name).toBe(newProductName);
+  });
+
+  it("Should change price", () => {
+    // Arrange
+    let product = new Product("Id123", "ProductName", 10);
+    let newPrice = 15;
+
+    // Act
+    product.changePrice(newPrice);
+    // Assert
+    expect(product.price).toBe(newPrice);
   });
 });

@@ -25,7 +25,15 @@ export default class Product {
     }
   }
 
-  set name(newName: string) {
+  changePrice(newPrice: number) {
+    this._price = newPrice;
+  }
+
+  get price() {
+    return this._price;
+  }
+
+  changeName(newName: string) {
     this._name = newName;
   }
 

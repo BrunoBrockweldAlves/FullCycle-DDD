@@ -31,6 +31,8 @@ export default class Order {
     if (this._items.length === 0) {
       throw new Error("Order must have at least one item.");
     }
+
+    this._items.forEach((i) => i.validate());
   }
 
   get Total() {
