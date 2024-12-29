@@ -40,4 +40,8 @@ export default class Product {
   get name() {
     return this._name;
   }
+
+  get id() {
+    return this._id;
+  }
 }
