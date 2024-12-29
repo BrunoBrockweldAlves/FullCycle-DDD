@@ -1,6 +1,6 @@
-import Product from "../../domain/entity/product/product";
-import IProductRepository from "../../domain/repository/product-repository-interface";
-import ProductModel from "../db/sequalize/model/product.model";
+import Product from "../../../../domain/entity/product/product";
+import IProductRepository from "../../../../domain/repository/product-repository-interface";
+import ProductModel from "../model/product.model";
 
 export default class ProductRepository implements IProductRepository {
   async create(entity: Product): Promise<void> {
