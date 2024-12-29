@@ -22,11 +22,15 @@ export default class ProductRepository implements IProductRepository {
     );
   }
 
-  async find(id: string): Promise<Product> {
-    throw new Error("Method not implemented.");
+  async findById(id: string): Promise<Product> {
+    const model = await ProductModel.findByPk(id);
+
+    return new Product(model.id, model.name, model.price);
   }
 
   async findAll(): Promise<Product[]> {
-    throw new Error("Method not implemented.");
+    return (await ProductModel.findAll()).map(
+      (model) => new Product(model.id, model.name, model.price)
+    );
   }
 }

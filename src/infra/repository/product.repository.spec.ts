@@ -41,7 +41,11 @@ describe("Product repository tests", () => {
     expect(productModel.price).toBe(product.price);
 
     // Alternative comparison
-    expect(productModel.toJSON()).toStrictEqual(productModel.toJSON());
+    expect(productModel.toJSON()).toStrictEqual({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+    });
   });
 
   it("Should update a product", async () => {
@@ -61,5 +65,34 @@ describe("Product repository tests", () => {
     });
 
     expect(productModel.name).toBe(updatedName);
+  });
+
+  it("Should find by id", async () => {
+    // Arrange
+    const productRepository = new ProductRepository();
+    let product = new Product("Id123", "ProductName", 10);
+    await productRepository.create(product);
+
+    // Act
+    var result = await productRepository.findById(product.id);
+
+    // Assert
+    expect(result).toStrictEqual(product);
+  });
+
+  it("Should find all", async () => {
+    // Arrange
+    const productRepository = new ProductRepository();
+    let product1 = new Product("Id123", "ProductName1", 10);
+    let product2 = new Product("Id345", "ProductName2", 20);
+    await productRepository.create(product1);
+    await productRepository.create(product2);
+
+    // Act
+    var result = await productRepository.findAll();
+
+    // Assert
+    expect(result.length).toBe(2);
+    expect(result).toStrictEqual([product1, product2]);
   });
 });
