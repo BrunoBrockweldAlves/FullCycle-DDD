@@ -16,7 +16,7 @@ export default class Order {
   }
 
   total() {
-    return this._items.reduce((acc, item) => acc + item.Price, 0);
+    return this._items.reduce((acc, item) => acc + item.TotalPrice, 0);
   }
 
   validate() {
@@ -35,7 +35,25 @@ export default class Order {
     this._items.forEach((i) => i.validate());
   }
 
+  updateItems(items: OrderItem[]) {
+    this._items = items;
+    this._total = this.total();
+    this.validate();
+  }
+
   get Total() {
     return this._total;
+  }
+
+  get Id() {
+    return this._id;
+  }
+
+  get CustomerId() {
+    return this._customerId;
+  }
+
+  get Items() {
+    return this._items;
   }
 }

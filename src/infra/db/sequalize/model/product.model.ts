@@ -1,10 +1,12 @@
 import {
   AllowNull,
   Column,
+  HasMany,
   Model,
   PrimaryKey,
   Table,
 } from "sequelize-typescript";
+import OrderItemModel from "./order-item.model";
 
 @Table({
   tableName: "products",
@@ -22,4 +24,7 @@ export default class ProductModel extends Model {
   @AllowNull(false)
   @Column
   declare price: number;
+
+  @HasMany(() => OrderItemModel)
+  declare orderItems: OrderItemModel[];
 }
