@@ -15,13 +15,26 @@ export default class EventDispatcher implements IEventDispatcher {
     }
     this.eventHandlers[eventName].push(handler);
   }
-  notify(event: IEvent): void {
-    throw new Error("Method not implemented.");
-  }
+
   unregister(eventName: string, handler: IEventHandler): void {
-    throw new Error("Method not implemented.");
+    if (this.eventHandlers[eventName]) {
+      const index = this.eventHandlers[eventName].indexOf(handler);
+      if (index > -1) {
+        this.eventHandlers[eventName].splice(index, 1);
+      }
+    }
   }
+
   unregisterAll(): void {
-    throw new Error("Method not implemented.");
+    this.eventHandlers = {};
+  }
+
+  notify(event: IEvent): void {
+    const eventName = event.constructor.name;
+    const handlers = this.eventHandlers[eventName];
+
+    if (handlers) {
+      handlers.forEach((h) => h.handle(event));
+    }
   }
 }
