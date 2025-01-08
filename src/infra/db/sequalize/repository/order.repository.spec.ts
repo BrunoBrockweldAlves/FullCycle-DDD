@@ -1,8 +1,5 @@
 import { Sequelize } from "sequelize-typescript";
 import OrderModel from "../model/order.model";
-import OrderRepository from "./order.repository";
-import Order from "../../../../domain/entity/order/order";
-import OrderItem from "../../../../domain/entity/order/order_item";
 import OrderItemModel from "../model/order-item.model";
 import CustomerModel from "../model/customer.model";
 import ProductModel from "../model/product.model";
@@ -11,6 +8,9 @@ import Address from "../../../../domain/entity/customer/valueObject/address";
 import CustomerRepository from "./customer.repository";
 import Product from "../../../../domain/entity/product/product";
 import ProductRepository from "./product.repository";
+import OrderRepository from "./order.repository";
+import OrderItem from "../../../../domain/checkout/entity/order_item";
+import Order from "../../../../domain/checkout/entity/order";
 
 describe("Order repository tests", () => {
   let sequelize: Sequelize;

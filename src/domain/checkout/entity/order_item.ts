@@ -1,4 +1,4 @@
-import Product from "../product/product";
+import Product from "../../entity/product/product";
 
 export default class OrderItem {
   private _id: string;

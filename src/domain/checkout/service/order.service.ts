@@ -1,4 +1,4 @@
-import Order from "../../entity/order/order";
+import Order from "../entity/order";
 
 export default class OrderService {
   static SumOrders(orders: Order[]): number {
