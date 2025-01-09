@@ -1,7 +1,7 @@
-import { Sequelize } from "sequelize-typescript";
 import ProductModel from "../model/product.model";
 import ProductRepository from "./product.repository";
 import Product from "../../../../domain/entity/product/product";
+import { Sequelize } from "sequelize-typescript";
 
 describe("Product repository tests", () => {
   let sequelize: Sequelize;
@@ -12,9 +12,8 @@ describe("Product repository tests", () => {
       storage: ":memory:",
       logging: false,
       sync: { force: true },
+      models: [ProductModel],
     });
-
-    sequelize.addModels([ProductModel]);
     await sequelize.sync();
   });
 

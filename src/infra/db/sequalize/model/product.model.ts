@@ -24,7 +24,4 @@ export default class ProductModel extends Model {
   @AllowNull(false)
   @Column
   declare price: number;
-
-  @HasMany(() => OrderItemModel)
-  declare orderItems: OrderItemModel[];
 }
