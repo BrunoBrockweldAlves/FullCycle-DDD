@@ -1,10 +1,10 @@
-import Order from "../../../../domain/checkout/entity/order";
-import OrderItem from "../../../../domain/checkout/entity/order_item";
-import IOrderRepository from "../../../../domain/checkout/repository/order-repository.interface";
-import CustomerModel from "../model/customer.model";
+import Order from "../../../domain/checkout/entity/order";
+import OrderItem from "../../../domain/checkout/entity/order_item";
+import IOrderRepository from "../../../domain/checkout/repository/order-repository.interface";
+import CustomerModel from "../../customer/model/customer.model";
+import ProductModel from "../../product/model/product.model";
 import OrderItemModel from "../model/order-item.model";
 import OrderModel from "../model/order.model";
-import ProductModel from "../model/product.model";
 
 export default class OrderRepository implements IOrderRepository {
   async create(entity: Order): Promise<void> {

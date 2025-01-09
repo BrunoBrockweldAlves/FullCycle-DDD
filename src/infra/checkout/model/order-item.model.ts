@@ -8,7 +8,7 @@ import {
   Table,
 } from "sequelize-typescript";
 import OrderModel from "./order.model";
-import ProductModel from "./product.model";
+import ProductModel from "../../product/model/product.model";
 
 @Table({
   tableName: "order_items",
