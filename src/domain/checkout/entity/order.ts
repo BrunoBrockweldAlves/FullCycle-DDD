@@ -1,6 +1,7 @@
+import IOrder from "./order.interface";
 import OrderItem from "./order_item";
 
-export default class Order {
+export default class Order implements IOrder {
   private _id: string;
   private _customerId: string;
   private _items: OrderItem[] = [];
