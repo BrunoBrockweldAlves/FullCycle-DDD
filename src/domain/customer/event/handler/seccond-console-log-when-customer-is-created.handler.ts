@@ -1,4 +1,4 @@
-import IEventHandler from "../../@shared/event-handler.interface";
+import IEventHandler from "../../../@shared/event-handler.interface";
 import CusomerCreatedEvent from "../customer-created.event";
 
 export default class SeccondConsoleLogWhenCustomerIsCreatedHandler

@@ -1,4 +1,4 @@
-import IEvent from "../@shared/event.interface";
+import IEvent from "../../@shared/event.interface";
 
 export default class CusomerCreatedEvent implements IEvent {
   dateTimeOccurred: Date;

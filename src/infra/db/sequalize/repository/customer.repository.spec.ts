@@ -1,5 +1,5 @@
-import Customer from "../../../../domain/entity/customer/customer";
-import Address from "../../../../domain/entity/customer/valueObject/address";
+import Customer from "../../../../domain/customer/entity/customer";
+import Address from "../../../../domain/customer/entity/valueObject/address";
 
 describe("Customer repository tests", () => {
   it("Should create Customer", () => {

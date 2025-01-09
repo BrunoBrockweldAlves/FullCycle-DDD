@@ -1,6 +1,6 @@
 import ProductModel from "../model/product.model";
 import ProductRepository from "./product.repository";
-import Product from "../../../../domain/entity/product/product";
+import Product from "../../../../domain/product/entity/product";
 import { Sequelize } from "sequelize-typescript";
 import OrderItemModel from "../model/order-item.model";
 import OrderModel from "../model/order.model";

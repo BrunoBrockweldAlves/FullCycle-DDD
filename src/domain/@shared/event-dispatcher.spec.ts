@@ -1,10 +1,9 @@
-import { Json } from "sequelize/types/utils";
-import CustomerAddressChangedEvent from "../customer/customer-address-changed.event";
-import CustomerCreatedEvent from "../customer/customer-created.event";
-import ConsoleLogWhenCustomerAddressIsChangedHandler from "../customer/handler/console-log-when-customer-address-is-changed.handler";
-import SendEmailWhenProductIsCreatedHandler from "../../product/event/handler/send-email-when-product-is-created.handler";
+import CustomerAddressChangedEvent from "../customer/event/customer-address-changed.event";
+import CustomerCreatedEvent from "../customer/event/customer-created.event";
+import ConsoleLogWhenCustomerAddressIsChangedHandler from "../customer/event/handler/console-log-when-customer-address-is-changed.handler";
+import SendEmailWhenProductIsCreatedHandler from "../product/event/handler/send-email-when-product-is-created.handler";
+import ProductCreatedEvent from "../product/event/product-created.event";
 import EventDispatcher from "./event-dispatcher";
-import ProductCreatedEvent from "../../product/event/product-created.event";
 
 describe("EventDispatcher tests", () => {
   it("should register an event handler", () => {
